@@ -1,0 +1,17 @@
+#include <unistd.h>
+#include <stdlib.h>
+#define ONE_K (1024)
+
+int main() {
+	char *some_memory;
+	char *scan_ptr;
+	some_memory = (char *)malloc(ONE_K);
+	if (some_memory == NULL)
+		printf("allocation failure\n");
+	scan_ptr = some_memory;
+	while(1) {
+		*scan_ptr = '\0';
+		scan_ptr++;
+	}
+	printf("allocation success\n");
+}
