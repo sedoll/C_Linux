@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <unistd.h>
+#include <stdio.h>
 
 int main() {
 	printf("Running ps with execlp\n");
