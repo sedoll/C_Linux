@@ -6,5 +6,5 @@
 > 학창시절에 배운 리눅스
 
 ## ubuntu_linux
-> 이것이 우분투 리눅스다 정리본
+> 이것이 우분투 리눅스다 정리본 <br>
 [카페](https://cafe.naver.com/thisislinux)
