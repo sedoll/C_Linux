@@ -141,3 +141,27 @@ clear
 ```
 history
 ```
+
+## Runlevel
+```
+init 0 - 종료
+init 1 - 시스템 복구
+init 2, 3, 4 - mutiUser
+init 5 - 그래픽 다중 사용자 모드
+init 6 - reboot
+```
+
+## nano editor
+```
+alt + n - 행번호출력칟
+```
+
+## vim
+```
+apt -y install vim
+
+i - 쓰기모드
+esc, ctrl + c - 모드 나가기
+:wq - 저장 후 종료
+:q! - 변경하지 않고 종료
+```
