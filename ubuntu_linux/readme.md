@@ -16,6 +16,27 @@ apt -y install tree
 ```
 ![](./img/image.png)
 
+## genisoimage
+```
+apt -y install genisoimage
+```
+
+> iso 만들기 <br>
+
+```
+genisoimage -r -J -o boot.iso /boot
+```
+
+> 마운트 <br>
+```
+mount -o loop boot.iso /media/iso
+```
+
+> 마운트 해제 <br>
+```
+umount /media/iso
+```
+
 <hr>
 
 # linux 명령어
@@ -164,4 +185,71 @@ i - 쓰기모드
 esc, ctrl + c - 모드 나가기
 :wq - 저장 후 종료
 :q! - 변경하지 않고 종료
+```
+
+## mount
+> cdrom 마운트 해제
+```
+unmount /dev/cdrom
+```
+
+# 사용자, 그룹 명령어
+## adduser
+> 새로운 사용자를 추가 <br>
+```
+adduser newuser1
+```
+
+## passwd
+> 사용자의 비밀번호를 지정하거나 변경 <br>
+```
+adduser newuser1
+```
+
+## usermod
+> 사용자의 속성 변경 <br>
+```
+usermod --groups ubuntu newuser1
+```
+
+## userdel
+> 사용자 삭제 <br>
+```
+userdel newuser2
+```
+
+## chage
+> 사용자의 암호를 주기적으로 변경하도록 설정 <br>
+```
+charge -m 2 newuser1
+```
+
+## groups
+> 현재 사용자가 속한 그룹을 보여줌 <br>
+```
+groups
+```
+
+## groupadd
+> 새로운 그룹 생성 <br>
+```
+groupadd newgroup1
+```
+
+## groupmod
+> 그룹 속성 변경 <br>
+```
+groupmod --new-name mygroup1 newgroup1
+```
+
+## groupdel
+> 그룹을 삭제 <br>
+```
+groupdel newgroup2
+```
+
+## gpasswd
+> 그룹의 암호를 설정하거나, 그룹의 관리를 수행 <br>
+```
+gpasswd mygroup1
 ```
