@@ -164,13 +164,11 @@ history
 ```
 
 ## Runlevel
-```
 init 0 - 종료
 init 1 - 시스템 복구
 init 2, 3, 4 - mutiUser
 init 5 - 그래픽 다중 사용자 모드
 init 6 - reboot
-```
 
 ## nano editor
 ```
@@ -178,13 +176,19 @@ alt + n - 행번호출력칟
 ```
 
 ## vim
-```
-apt -y install vim
-
 i - 쓰기모드
 esc, ctrl + c - 모드 나가기
 :wq - 저장 후 종료
 :q! - 변경하지 않고 종료
+
+```
+apt -y install vim
+```
+
+## gedit
+> 파일을 메모장으로 열기
+```
+gedit /etc/apt/sources.list.d/ubuntu.sources
 ```
 
 ## mount
@@ -252,4 +256,89 @@ groupdel newgroup2
 > 그룹의 암호를 설정하거나, 그룹의 관리를 수행 <br>
 ```
 gpasswd mygroup1
+```
+
+# 파일
+
+## chgrp
+> 그룹 변경 - chgrp 유저이름 (파일 혹은 디렉토리 이름) <br>
+```
+chgrp ubuntu testfile
+```
+
+## su - username
+> 유저 변경 <br>
+```
+su - ubuntu
+```
+
+## mv file(dir)name username
+> 해당 유저디렉토리로 파일이나 디렉토리 이동 <br>
+```
+mv testfile.txt ~ubuntu
+```
+
+# 링크
+
+## 하드링크 생성
+> 원본과 같은 파일, 원본 파일의 여부 상관없이 조회 가능 <br>
+```
+ln filename hardlink
+```
+
+## 소프트링크(심볼릭링크)
+> 원본을 가리키는 파일, 원본과 다름, 원본파일이 없어지면 조회 불가가<br>
+```
+ln -s filename softlink
+```
+
+# 설치 명령어
+
+## dpkg
+> 의존성 문제 때문에 최근에는 잘 안쓰임 <br>
+dpkg --info filename <br>
+
+### 정보 확인
+```
+dpkg --info axel
+```
+### 설치
+```
+dpkg -i axel
+```
+### 설치된 패키지 확인
+```
+dpkg -l axel
+```
+### 설치된 패키지 제거
+```
+dpkg -r axel
+```
+
+## apt
+> dpkg에 의존성 문제 때문에 만들어짐 <br>
+apt-cache show filename <br>
+### 정보확인
+```
+apt-cache show galculator
+```
+
+### 의존성 확인
+```
+apt-cache depends galculator
+```
+
+### 모든 의존성 확인해서 설치
+```
+apt -y install galculator
+```
+
+### 수정 내역 업데이트
+```
+apt update
+```
+
+### 업그레이드 할수있는 패키지 업그레이드
+```
+apt upgrade
 ```
