@@ -342,3 +342,29 @@ apt update
 ```
 apt upgrade
 ```
+
+## pip install
+> 리눅스 22 이상부턴 그냥 쓰면 에러나서 가상환경에서 python 라이브러리를 설치해야 함
+
+### 1. 가상환경 생성
+```bash
+sudo apt install python3-venv
+python3 -m venv myenv
+```
+
+### 2. 가상환경 활성화
+```bash
+source /myenv/bin/activate
+```
+
+### 3. 필요 라이브러리 설치
+> root계정 권한 필요
+
+```bash
+pip install requests
+```
+
+### 4. 가상환경 비활성화
+```bash
+deactivate
+```
